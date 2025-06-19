@@ -16,7 +16,7 @@ function Todo({ title, id }) {
     <div>
       {title}
       {/* <button onClick={() => dispatch(removeToDo(id))}>delete</button> */}
-      <button onClick={() => actions.removeToDo(removeToDo(id))}>delete</button>
+      <button onClick={() => actions.removeToDo(id)}>delete</button>
     </div>
   );
 }
