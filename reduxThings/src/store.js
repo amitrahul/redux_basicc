@@ -1,24 +1,31 @@
-import { createStore, combineReducers } from "redux";
-import todoReducer from "./reducers/todoReducer";
+// import { createStore, combineReducers } from "redux";
+// import todoReducer from "./reducers/todoReducer";
 
-// import { configureStore } from "@reduxjs/toolkit";
-// import todoSlice from "./slices/todoSlice";
+import { configureStore } from "@reduxjs/toolkit";
+import todoSlice from "./slices/todoSlice";
 
-const reduxDevToolEnhancers =
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
+/**
+ * for react-redux part
+ */
+// const reduxDevToolEnhancers =
+//   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
 
-const store = createStore(
-  combineReducers({ todos: todoReducer }),
-  {},
-  reduxDevToolEnhancers
-);
+// const store = createStore(
+//   combineReducers({ todos: todoReducer }),
+//   {},
+//   reduxDevToolEnhancers
+// );
 
-// const store = configureStore({
-//   reducer: {
-//     todos: todoSlice.reducer,
-//   },
-//   devTools: true,
-// });
-// console.log("heello");
+/**
+ * for redux toolkit part
+ */
+const store = configureStore({
+  reducer: {
+    todos: todoSlice.reducer,
+  },
+  devTools: true,
+});
+
+console.log("hello", todoSlice);
 
 export default store;
