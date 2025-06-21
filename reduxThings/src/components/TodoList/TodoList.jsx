@@ -20,7 +20,7 @@ import Todo from "../todo/todo";
 import TodoInput from "../TodoInput/TodoInput";
 
 function TodoList() {
-  const todoList = useSelector((state) => state.todos);
+  const todoList = useSelector((state) => state.todos.value);
 
   return (
     <>
